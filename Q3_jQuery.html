@@ -29,15 +29,19 @@
     </div>
     <button id="load">Load Data</button>
     <script>
-        $('#load').click(function(){
+        $('#load').click(function(){                                                            // setting up an on-click listener which will fetch data
+   
             fetch("https://jsonplaceholder.typicode.com/posts")
-            .then((response) => response.json())
+            .then((response) => response.json())                                                // using Fetch API method to fetch the json file
             .then((output) => {
+            
                 var res = output;
-                $("body").empty();
-                for(let i=0;i<res.length;i++){
-                    setTimeout(function (){
-                        $(`<div class='infoPallete'>
+                $("body").empty();                                                              
+                
+            
+                for(let i=0;i<res.length;i++){                                                  //iterating over the json file
+                    setTimeout(function (){     
+                        $(`<div class='infoPallete'>                                            //embeding it into desired format of HTML
                     <h3 class='title'>${res[i].title}</h3>
                     <p class='body'>${res[i].body }</p></div>`).appendTo("body");
                     },100*i)
