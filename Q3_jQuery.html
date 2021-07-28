@@ -41,10 +41,10 @@
             
                 for(let i=0;i<res.length;i++){                                                  //iterating over the json file
                     setTimeout(function (){     
-                        $(`<div class='infoPallete'>                                            //embeding it into desired format of HTML
+                        $(`<div class='infoPallete'>                                            
                     <h3 class='title'>${res[i].title}</h3>
-                    <p class='body'>${res[i].body }</p></div>`).appendTo("body");
-                    },100*i)
+                    <p class='body'>${res[i].body }</p></div>`).appendTo("body");       
+                    },100*i)                                                                                //embeding it into desired format of HTML
                }
             })
         })
